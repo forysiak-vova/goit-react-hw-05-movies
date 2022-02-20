@@ -58,13 +58,13 @@ export const SearchFormInput = styled.input`
   display: inline-block;
   width: 100%;
   font: inherit;
-  font-size: 20px;
+  font-size: 22px;
   border: none;
   outline: none;
   padding-left: 4px;
   padding-right: 4px;
   &::placeholder {
     font: inherit;
-    font-size: 18px;
+    font-size: 20px;
   }
 `;

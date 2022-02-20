@@ -11,6 +11,7 @@ margin-top:20px;
 margin-bottom: 20px;
 color: #fff;
 border-radius:4px;
+font-size: 22px;
  transform: scale(1);
 &:hover{
   transform: scale(1.05);
