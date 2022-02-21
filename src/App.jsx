@@ -13,10 +13,10 @@ function App() {
   return (
 
      <>
-      <Navigation />
+      {/* <Navigation /> */}
       
     <Routes>
-        {/* <Route path="/" element={<Navigation />}> */}
+        <Route path="/" element={<Navigation />}>
         <Route path="/" element={<HomePage />} />
         <Route path='/movies' element={<MoviesPage/>}/>
          
@@ -26,7 +26,7 @@ function App() {
            </Route>
 
           <Route path="*" element={<HomePage />} />
-        {/* </Route> */}
+        </Route>
       </Routes>
          <ToastContainer
         position="top-right"
