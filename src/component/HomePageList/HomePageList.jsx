@@ -12,6 +12,7 @@ const HomePageList = ({ items }) => {
    
             <HomePageItem
                key={id}
+               id={id}
                poster_path={
                    poster_path ?
                      `https://image.tmdb.org/t/p/w500${poster_path}`

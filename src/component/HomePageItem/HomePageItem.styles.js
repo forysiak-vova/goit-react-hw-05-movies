@@ -1,9 +1,11 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
+import {Link} from 'react-router-dom'
 
-export const Item = styled.li`
+export const Item = styled(Link)`
 background-color:grey;
 border-radius: 6px;
  transform: scale(1);
+ text-decoration: none;
  &:hover,
  &:focus{
      transform: scale(1.05);
