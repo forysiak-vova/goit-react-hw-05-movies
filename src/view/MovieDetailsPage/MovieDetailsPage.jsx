@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import MoviePageList from '../../component/MoviePageList'
+import MoviePageList from '../../component/MovieDetailsPageList'
 
 const MovieDetailsPage = () => {
    // console.log(useParams())
@@ -20,7 +20,6 @@ const MovieDetailsPage = () => {
       <>
          {movi && <MoviePageList movi={movi}/>}
          
-     {/* {movieId} */}
       </>
       
    );

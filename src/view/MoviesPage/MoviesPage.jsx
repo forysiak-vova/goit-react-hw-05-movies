@@ -18,11 +18,11 @@ const MoviesPage = () => {
       firstFetch.current = false;
       return;
     }
-   //    if (!searchQuery) {
-   //    return;
-   //  }
+      if (!searchQuery) {
+      return;
+    }
 
-      fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=ru-US&query=${searchQuery}&page=${page}&include_adult=false`)
+      fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${searchQuery}&page=${page}&include_adult=false`)
          .then(response => response.json())
          .then(({ results }) => {
               if (results.length === 0) {
@@ -34,7 +34,7 @@ const MoviesPage = () => {
           return setMovie(prev => [...prev, ...results])
          })
    }, [searchQuery, page])
-   
+  
    const addFilm = () => {
 setPage(prev => prev + 1)
    }

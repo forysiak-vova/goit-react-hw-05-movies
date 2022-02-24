@@ -7,11 +7,15 @@ const HomePageList = ({ items }) => {
    
    return (
       <List>
-
          {items.map(({ poster_path, id, title }) =>
+
    
             <HomePageItem
-               key={id}
+               key={
+                  id 
+                     
+                 
+               }
                id={id}
                poster_path={
                    poster_path ?

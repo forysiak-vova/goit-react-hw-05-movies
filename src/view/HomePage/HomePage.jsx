@@ -9,7 +9,7 @@ const HomePage = () => {
    const [page, setPage] = useState(1)
 
    useEffect(() => {
-      fetch(`${BASE_URl}/3/trending/movie/week?api_key=0754829cbe2d4a3d2043b315bf2671de&language=ru-US&page=${page}`)
+      fetch(`${BASE_URl}/3/trending/movie/day?api_key=0754829cbe2d4a3d2043b315bf2671de&language=ru-US&page=${page}`)
          .then(response => response.json())
       .then(({results}) => {setSearchQuery(prev => [...prev, ...results])} )
    }, [page])

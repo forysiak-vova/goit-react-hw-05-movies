@@ -1,9 +1,10 @@
 import defaultImg from '../../images/noImageAvailable.jpg'
-
+import Cast from '../../component/Cast'
 const MoviePageList = ({ movi }) => {
-//  console.log(movi.genres)
    
-   return <ul> 
+   return <>
+   
+   <ul> 
       <li>{
          <img src={
           movi.poster_path ?
@@ -30,7 +31,10 @@ const MoviePageList = ({ movi }) => {
      
          {movi.genres.map(({id,name}) => <span key={id}>{name}</span>)}
        </li>
-   </ul>
+      </ul>
+      
+<Cast/>
+   </>
    
   
 }
