@@ -1,5 +1,6 @@
 import defaultImg from '../../images/noImageAvailable.jpg'
 import Cast from '../../component/Cast'
+import Reviews from '../../component/Reviews'
 const MoviePageList = ({ movi }) => {
    
    return <>
@@ -33,7 +34,8 @@ const MoviePageList = ({ movi }) => {
        </li>
       </ul>
       
-<Cast/>
+      <Cast />
+      <Reviews/>
    </>
    
   
