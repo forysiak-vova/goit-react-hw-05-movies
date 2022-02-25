@@ -1,8 +1,7 @@
 import defaultImg from '../../images/noImageAvailable.jpg'
-import Cast from '../../component/Cast'
-import Reviews from '../../component/Reviews'
+// import Cast from '../../component/Cast'
+// import Reviews from '../../component/Reviews'
 const MoviePageList = ({ movi }) => {
-   
    return <>
    
    <ul> 
@@ -30,12 +29,12 @@ const MoviePageList = ({ movi }) => {
       <li>
          <h3>Genres</h3>
      
-         {movi.genres.map(({id,name}) => <span key={id}>{name}</span>)}
+         {movi.genres.map(({id,name}) => <p key={id}>{name}</p>)}
        </li>
       </ul>
       
-      <Cast />
-      <Reviews/>
+      {/* <Cast /> */}
+      {/* <Reviews/> */}
    </>
    
   

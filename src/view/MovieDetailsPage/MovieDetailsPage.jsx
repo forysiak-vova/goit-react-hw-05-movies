@@ -1,12 +1,16 @@
-import { useParams } from 'react-router-dom'
+import { useParams, Link, useNavigate, useLocation, Outlet} from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import MoviePageList from '../../component/MovieDetailsPageList'
 
 const MovieDetailsPage = () => {
    // console.log(useParams())
    const { movieId } = useParams()
-   // console.log(movieId)
-   const [movi, setMovi] = useState('');
+ 
+   console.log(useLocation())
+   const navigate = useNavigate()
+   const goBack = () => navigate(-1)
+
+   const [movi, setMovi] = useState(null);
    useEffect(() => {
       
      
@@ -15,11 +19,16 @@ const MovieDetailsPage = () => {
          .then(data => setMovi(data))
       
    },[])
-   console.log(movi)
+   // console.log(movi)
    return (
       <>
-         {movi && <MoviePageList movi={movi}/>}
+         <button onClick={goBack}>Go back</button>
+         {movi && <MoviePageList movi={movi} />}
          
+         <Link to='reviews'>reviews</Link>
+         
+         <Link to='cast'>cast</Link>
+         <Outlet />
       </>
       
    );

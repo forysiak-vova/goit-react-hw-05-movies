@@ -4,6 +4,8 @@ import Navigation from './component/Navigation'
 import MovieDetailsPage from './view/MovieDetailsPage'
 import HomePage from 'view/HomePage';
 import MoviesPage from 'view/MoviesPage';
+import Cast from './component/Cast'
+import Reviews from './component/Reviews'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -21,9 +23,14 @@ function App() {
         <Route path='movies' element={<MoviesPage/>}/>
          
           <Route path="movies/:movieId" element={<MovieDetailsPage />}> 
-            {/* <Route path="cast" element={<Cast />} />
-            <Route path="reviews" element={<Reviews />} /> */}
-           </Route>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+              {/* <Route path='movies/:movieId/reviews' element={<Reviews />} />
+          
+          <Route path='movies/:movieId/cast' element={<Cast />} /> */}
+        
+          
 
           <Route path="*" element={<HomePage />} />
         </Route>

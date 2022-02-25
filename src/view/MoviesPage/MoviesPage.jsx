@@ -50,7 +50,8 @@ setPage(prev => prev + 1)
       <>
       <MoviesForm onSubmit={handelFormSubmit}/>
          <HomePageList items={movie} />
-         {btn && <Button onClick={addFilm}>Load more</Button>}
+       {btn && <Button onClick={addFilm}>Load more</Button>}
+      
       </>
       )
 }
