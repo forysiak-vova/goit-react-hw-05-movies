@@ -6,7 +6,7 @@ const MovieDetailsPage = () => {
    // console.log(useParams())
    const { movieId } = useParams()
  
-   console.log(useLocation())
+   // console.log(useLocation())
    const navigate = useNavigate()
    const goBack = () => navigate(-1)
 
@@ -24,10 +24,17 @@ const MovieDetailsPage = () => {
       <>
          <button onClick={goBack}>Go back</button>
          {movi && <MoviePageList movi={movi} />}
-         
+         <p>Additional information</p>
+         <ul>
+            <li>
          <Link to='reviews'>reviews</Link>
-         
+            </li>
+            <li>
          <Link to='cast'>cast</Link>
+            </li>
+         
+
+         </ul>
          <Outlet />
       </>
       
