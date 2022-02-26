@@ -1,5 +1,6 @@
 import defaultImg from '../../images/noImageAvailable.jpg'
-import {List, Description} from './MovieDetailsPageList.styles'
+import { List, Description } from './MovieDetailsPageList.styles'
+import PropTypes from 'prop-types';
 // import Cast from '../../component/Cast'
 // import Reviews from '../../component/Reviews'
 const MoviePageList = ({ movi }) => {
@@ -48,6 +49,9 @@ const MoviePageList = ({ movi }) => {
    </>
    
   
+}
+MoviePageList.propTypes = {
+   movi: PropTypes.object.isRequired
 }
 
 export default MoviePageList

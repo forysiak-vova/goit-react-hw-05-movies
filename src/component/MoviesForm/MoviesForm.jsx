@@ -1,10 +1,11 @@
 import {
-   SearchbarContainer,
+  SearchbarContainer,
   SearchForm,
   SearchFormButton,
   SearchFormButtonLabel,
   SearchFormInput,
-} from './MoviesForm.styles'
+} from './MoviesForm.styles';
+import PropTypes from 'prop-types';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
@@ -55,5 +56,9 @@ const MoviesForm = ({onSubmit}) => {
       </SearchForm>
     </SearchbarContainer>
    )
+}
+
+MoviesForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired
 }
 export default MoviesForm;

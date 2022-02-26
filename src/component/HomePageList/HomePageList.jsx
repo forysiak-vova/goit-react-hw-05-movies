@@ -3,6 +3,8 @@ import React from 'react';
 import HomePageItem from '../HomePageItem'
 import { List } from './HomePage.styles'
 import defaultImg from '../../images/noImageAvailable.jpg'
+import PropTypes from 'prop-types'
+
 const HomePageList = ({ items }) => {
    
    return (
@@ -30,5 +32,17 @@ const HomePageList = ({ items }) => {
    )
 
 }
+
+HomePageList.protoType = { 
+   items: PropTypes.arrayOf(
+      PropTypes.shape({
+      poster_path: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired
+      
+   })
+   )
+}
+
 export default HomePageList;
 

@@ -1,4 +1,5 @@
-import {Item} from './ReviewsList.styles'
+import { Item } from './ReviewsList.styles'
+import PropTypes from 'prop-types';
 
 const ReviewsList = ({ reviews }) => {
    console.log(reviews)
@@ -15,6 +16,16 @@ const ReviewsList = ({ reviews }) => {
 
       </ul>
    )
+}
+
+ReviewsList.propTypes = {
+   reviews: PropTypes.arrayOf(
+     PropTypes.shape({
+        author: PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired,
+        id: PropTypes.number.isRequired
+     })
+  )
 }
 
 export default ReviewsList;

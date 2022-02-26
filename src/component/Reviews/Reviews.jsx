@@ -14,9 +14,9 @@ const Reviews = () => {
   console.log(reviews)
    return (
       <>
-         {reviews === [] ? 
+         {reviews.length === 0 ? 
             
-            <p>rrrrr</p>
+            <h3>We don't have any reviews for this movie.</h3>
             :
             <ReviewsList reviews={reviews} />
             

@@ -1,5 +1,6 @@
 import { width } from "@mui/system";
 import defaultImg from '../../images/noImageAvailable.jpg'
+import PropTypes from 'prop-types';
 
 
 const CastList = ({ cast }) => {
@@ -25,6 +26,10 @@ const CastList = ({ cast }) => {
          
       </ul>
       )
+}
+
+CastList.propTypes = {
+   cast: PropTypes.object.isRequired
 }
 
 export default CastList;
