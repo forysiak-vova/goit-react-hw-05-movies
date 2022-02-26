@@ -2,7 +2,7 @@ import { Item } from './ReviewsList.styles'
 import PropTypes from 'prop-types';
 
 const ReviewsList = ({ reviews }) => {
-   console.log(reviews)
+   // console.log(reviews)
    return (
       <ul>
         {
@@ -23,9 +23,10 @@ ReviewsList.propTypes = {
      PropTypes.shape({
         author: PropTypes.string.isRequired,
         content: PropTypes.string.isRequired,
-        id: PropTypes.number.isRequired
+        id: PropTypes.string.isRequired
      })
   )
+   // reviews: PropTypes.array
 }
 
 export default ReviewsList;

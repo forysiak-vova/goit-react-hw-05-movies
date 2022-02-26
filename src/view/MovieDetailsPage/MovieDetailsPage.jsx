@@ -1,5 +1,6 @@
 import { useParams, Link, useNavigate, useLocation, Outlet} from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import {Button} from './MovieDetailsPage.styles'
 import MoviePageList from '../../component/MovieDetailsPageList'
 
 const MovieDetailsPage = () => {
@@ -22,15 +23,15 @@ const MovieDetailsPage = () => {
    // console.log(movi)
    return (
       <>
-         <button onClick={goBack}>Go back</button>
+         <Button onClick={goBack}>Go back</Button>
          {movi && <MoviePageList movi={movi} />}
          <p>Additional information</p>
          <ul>
             <li>
-         <Link to='reviews'>reviews</Link>
+                <Link to='cast'>cast</Link>
             </li>
             <li>
-         <Link to='cast'>cast</Link>
+                <Link to='reviews'>reviews</Link>
             </li>
          
 

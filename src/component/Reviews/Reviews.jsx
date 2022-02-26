@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import ReviewsList from "component/ReviewsList"
 
 const Reviews = () => {
-   console.log(useParams())
+   // console.log(useParams())
    const { movieId } = useParams()
    const [reviews, setReviews] = useState([])
    useEffect(() => {
@@ -11,7 +11,7 @@ const Reviews = () => {
          .then(response => response.json())
          .then(({results}) => setReviews(results))
    }, [])
-  console.log(reviews)
+//   console.log(reviews)
    return (
       <>
          {reviews.length === 0 ? 
