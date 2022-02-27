@@ -1,14 +1,21 @@
 import { Routes ,Route } from 'react-router-dom';
-// import { Title } from './App.styles' 
-import Navigation from './component/Navigation'
-import MovieDetailsPage from './view/MovieDetailsPage'
-import HomePage from 'view/HomePage';
-import MoviesPage from 'view/MoviesPage';
-import Cast from './component/Cast'
-import Reviews from './component/Reviews'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {lazy, Suspense} from 'react'
+// import { Title } from './App.styles' 
+import Loader from './component/Loader'
+import Navigation from './component/Navigation';
 
+const HomePage = lazy(() =>
+  import('view/HomePage' /* webpackChunkName: 'home-page' */))
+const MoviesPage = lazy(() =>
+  import('./view/MoviesPage' /* webpackChunkName: 'movies-page' */))
+const MovieDetailsPage = lazy(() =>
+  import('./view/MovieDetailsPage' /* webpackChunkName: 'movie-details-page' */))
+const Cast = lazy(() =>
+  import('./component/Cast' /* webpackChunkName: 'cast' */))
+const Reviews = lazy(() =>
+  import('./component/Reviews' /* webpackChunkName: 'reviews' */))
 
 
 function App() {
@@ -16,8 +23,10 @@ function App() {
 
      <>
       {/* <Navigation /> */}
-      
-    <Routes>
+      <Suspense fallback={<Loader/>}>
+
+
+      <Routes>
         <Route path="/" element={<Navigation />}>
         <Route index element={<HomePage />} />
         <Route path='movies' element={<MoviesPage/>}/>
@@ -35,6 +44,7 @@ function App() {
           <Route path="*" element={<HomePage />} />
         </Route>
       </Routes>
+      </Suspense>
          <ToastContainer
         position="top-right"
         autoClose={3000}

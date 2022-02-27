@@ -25,6 +25,7 @@ const HomePageList = ({ items }) => {
                      : defaultImg
                }
                title={title}
+              
             />
             )}
       </List>

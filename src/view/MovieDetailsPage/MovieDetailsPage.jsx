@@ -12,6 +12,7 @@ const MovieDetailsPage = () => {
    const goBack = () => navigate(-1)
 
    const [movi, setMovi] = useState(null);
+   
    useEffect(() => {
       
      
@@ -28,10 +29,10 @@ const MovieDetailsPage = () => {
          <p>Additional information</p>
          <ul>
             <li>
-                <Link to='cast'>cast</Link>
+                <Link to='cast'>Cast</Link>
             </li>
             <li>
-                <Link to='reviews'>reviews</Link>
+                <Link to='reviews'>Reviews</Link>
             </li>
          
 
