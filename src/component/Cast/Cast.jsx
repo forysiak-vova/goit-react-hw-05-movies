@@ -6,7 +6,6 @@ import CastList from '../CastList'
 const Cast = () => {
    const [cast, setCast] = useState(null)
    const {movieId} = useParams()
-   // console.log(movieId)
 
    useEffect(() => {
       if (!movieId) {

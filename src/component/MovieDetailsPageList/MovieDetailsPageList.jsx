@@ -1,9 +1,10 @@
 import defaultImg from '../../images/noImageAvailable.jpg'
 import { List, Description } from './MovieDetailsPageList.styles'
+import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
-// import Cast from '../../component/Cast'
-// import Reviews from '../../component/Reviews'
+
 const MoviePageList = ({ movi }) => {
+   
    return <>
    
       <List> 
@@ -44,8 +45,6 @@ const MoviePageList = ({ movi }) => {
          </Description>
       </List>
       
-      {/* <Cast /> */}
-      {/* <Reviews/> */}
    </>
    
   

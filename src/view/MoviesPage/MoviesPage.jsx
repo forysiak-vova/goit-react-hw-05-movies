@@ -13,9 +13,8 @@ const MoviesPage = () => {
    const [movie, setMovie] = useState([]);
    const [searchParams, setSearchParams] = useSearchParams();
    
-  // const location = useLocation();
- 
-  
+  const location = useLocation();
+
   // const history = useSearchParams();
  
   const paramsQuery = searchParams.get('query') ?? '';
@@ -62,7 +61,7 @@ setPage(prev => prev + 1)
    return (
       <>
       <MoviesForm onSubmit={handelFormSubmit}/>
-         <HomePageList items={movie} />
+       <HomePageList items={movie} />
        {btn && <Button onClick={addFilm}>Load more</Button>}
       
       </>

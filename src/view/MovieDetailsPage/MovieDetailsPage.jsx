@@ -1,15 +1,20 @@
 import { useParams, Link, useNavigate, useLocation, Outlet} from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import {Button} from './MovieDetailsPage.styles'
 import MoviePageList from '../../component/MovieDetailsPageList'
 
 const MovieDetailsPage = () => {
-   // console.log(useParams())
    const { movieId } = useParams()
- 
-   // console.log(useLocation())
+   const location = useLocation()
+
+   const page = useRef(location?.state?.from ?? '/');
+   
    const navigate = useNavigate()
-   const goBack = () => navigate(-1)
+
+   const goBack = () => {
+    
+      navigate(page.current);
+      }
 
    const [movi, setMovi] = useState(null);
    
@@ -21,10 +26,10 @@ const MovieDetailsPage = () => {
          .then(data => setMovi(data))
       
    },[])
-   // console.log(movi)
+ 
    return (
       <>
-         <Button onClick={goBack}>Go back</Button>
+         <Button type='button' onClick={goBack}>Go back</Button>
          {movi && <MoviePageList movi={movi} />}
          <p>Additional information</p>
          <ul>
