@@ -18,7 +18,7 @@ const CastList = ({ cast }) => {
                   :
                   defaultImg
             
-            } width='200' />
+            }  width={200} />
             <p>{name}</p>
             <p>Character: {character}</p>
            

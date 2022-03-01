@@ -1,6 +1,7 @@
 import { Button } from './HomePage.styles'
 import { useState, useEffect } from 'react'
 import HomePageList from '../../component/HomePageList'
+import { toast } from 'react-toastify';
 const BASE_URl = 'https://api.themoviedb.org'
 
 
@@ -11,7 +12,15 @@ const HomePage = () => {
    useEffect(() => {
       fetch(`${BASE_URl}/3/trending/movie/week?api_key=0754829cbe2d4a3d2043b315bf2671de&language=ru-US&page=${page}`)
          .then(response => response.json())
-      .then(({results}) => {setSearchQuery(prev => [...prev, ...results])} )
+         .then(({ results }) => {
+            if (results.length === 0) {
+        toast.error('ERROR', {
+          theme: 'colored',
+        });
+      }
+            
+           return setSearchQuery(prev => [...prev, ...results])
+         })
    }, [page])
 
    const addImg = () => {

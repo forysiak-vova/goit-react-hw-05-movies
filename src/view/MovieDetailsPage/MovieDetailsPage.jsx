@@ -1,6 +1,7 @@
 import { useParams, Link, useNavigate, useLocation, Outlet} from 'react-router-dom'
 import { useState, useEffect, useRef } from 'react'
-import {Button} from './MovieDetailsPage.styles'
+import { Button } from './MovieDetailsPage.styles'
+import { toast } from 'react-toastify';
 import MoviePageList from '../../component/MovieDetailsPageList'
 
 const MovieDetailsPage = () => {
@@ -23,10 +24,17 @@ const MovieDetailsPage = () => {
      
       fetch(`https://api.themoviedb.org/3/movie/${matchId}?api_key=0754829cbe2d4a3d2043b315bf2671de&language=en-US`)
          .then(response => response.json())
-         .then(data => setMovi(data))
+         .then(data => {
+            if (!data) {
+                toast.error('ERROR', {
+          theme: 'colored',
+        });
+            }
+          return  setMovi(data)
+         })
       
+         
    },[matchId])
- 
    return (
       <>
          <Button type='button' onClick={goBack}>Go back</Button>
