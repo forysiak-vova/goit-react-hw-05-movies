@@ -5,16 +5,17 @@ import CastList from '../CastList'
 
 const Cast = () => {
    const [cast, setCast] = useState(null)
-   const {movieId} = useParams()
+   const { slug } = useParams()
+    const matchId = slug.match(/[a-z0-9]+$/)[0]
 
    useEffect(() => {
-      if (!movieId) {
+      if (!matchId) {
          return
       }
-      fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=0754829cbe2d4a3d2043b315bf2671de&language=en-US`)
+      fetch(`https://api.themoviedb.org/3/movie/${matchId}/credits?api_key=0754829cbe2d4a3d2043b315bf2671de&language=en-US`)
          .then(response => response.json())
          .then(data => setCast(data))
-   }, [])
+   }, [matchId])
 
 
    return (

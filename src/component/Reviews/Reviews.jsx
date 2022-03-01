@@ -3,15 +3,14 @@ import { useState, useEffect } from "react"
 import ReviewsList from "component/ReviewsList"
 
 const Reviews = () => {
-   // console.log(useParams())
-   const { movieId } = useParams()
+   const { slug } = useParams();
+     const matchId = slug.match(/[a-z0-9]+$/)[0]
    const [reviews, setReviews] = useState([])
    useEffect(() => {
-      fetch(`https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=0754829cbe2d4a3d2043b315bf2671de&language=en-US&page=1`)
+      fetch(`https://api.themoviedb.org/3/movie/${matchId}/reviews?api_key=0754829cbe2d4a3d2043b315bf2671de&language=en-US&page=1`)
          .then(response => response.json())
          .then(({results}) => setReviews(results))
-   }, [])
-//   console.log(reviews)
+   }, [matchId])
    return (
       <>
          {reviews.length === 0 ? 

@@ -2,7 +2,6 @@ import { Item } from './ReviewsList.styles'
 import PropTypes from 'prop-types';
 
 const ReviewsList = ({ reviews }) => {
-   // console.log(reviews)
    return (
       <ul>
         {
