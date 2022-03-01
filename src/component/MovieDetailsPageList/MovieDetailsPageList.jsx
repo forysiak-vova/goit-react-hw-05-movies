@@ -1,6 +1,5 @@
 import defaultImg from '../../images/noImageAvailable.jpg'
 import { List, Description } from './MovieDetailsPageList.styles'
-import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const MoviePageList = ({ movi }) => {
@@ -15,7 +14,7 @@ const MoviePageList = ({ movi }) => {
                movi.poster_path ?
                   `https://image.tmdb.org/t/p/w500${movi.poster_path}` :
                   defaultImg
-            } alt="movi.title" width={300} height={400}/>
+            } alt={movi.title} width={300} height={400}/>
       }</li>
          </div>
          <Description>

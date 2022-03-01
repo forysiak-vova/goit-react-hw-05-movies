@@ -2,8 +2,8 @@ import MoviesForm from "component/MoviesForm";
 import HomePageList from "component/HomePageList";
 import {Button} from './MoviesPage.styles'
 import { toast } from 'react-toastify';
-import { useEffect, useState, useRef } from "react";
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { useSearchParams } from 'react-router-dom';
 
 
 const API_KEY = '0754829cbe2d4a3d2043b315bf2671de'
@@ -13,9 +13,6 @@ const MoviesPage = () => {
    const [movie, setMovie] = useState([]);
    const [searchParams, setSearchParams] = useSearchParams();
    
-  const location = useLocation();
-
-  // const history = useSearchParams();
  
   const paramsQuery = searchParams.get('query') ?? '';
 
