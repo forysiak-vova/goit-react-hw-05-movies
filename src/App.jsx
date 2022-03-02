@@ -9,13 +9,13 @@ import Navigation from './component/Navigation';
 const HomePage = lazy(() =>
   import('view/HomePage' /* webpackChunkName: 'home-page' */))
 const MoviesPage = lazy(() =>
-  import('view/MoviesPage' /* webpackChunkName: 'movies-page' */))
+  import('./view/MoviesPage' /* webpackChunkName: 'movies-page' */))
 const MovieDetailsPage = lazy(() =>
-  import('view/MovieDetailsPage' /* webpackChunkName: 'movie-details-page' */))
+  import('./view/MovieDetailsPage' /* webpackChunkName: 'movie-details-page' */))
 const Cast = lazy(() =>
-  import('component/Cast' /* webpackChunkName: 'cast' */))
+  import('./component/Cast' /* webpackChunkName: 'cast' */))
 const Reviews = lazy(() =>
-  import('component/Reviews' /* webpackChunkName: 'reviews' */))
+  import('./component/Reviews' /* webpackChunkName: 'reviews' */))
 
 
 function App() {
