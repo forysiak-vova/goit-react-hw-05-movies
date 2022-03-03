@@ -1,4 +1,3 @@
-import { width } from "@mui/system";
 import defaultImg from '../../images/noImageAvailable.jpg'
 import PropTypes from 'prop-types';
 

@@ -21,3 +21,9 @@ HomePageItem.propTypes = {
 }
 
 export default HomePageItem;
+
+
+// const makeSlag = () =>
+//     slugify(`${title} ${id}`, {
+//       lower: true,
+//     });
