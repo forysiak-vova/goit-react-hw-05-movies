@@ -2,8 +2,7 @@ import { Button } from './HomePage.styles'
 import { useState, useEffect } from 'react'
 import HomePageList from '../../component/HomePageList'
 import { toast } from 'react-toastify';
-import axios from 'axios';
-const BASE_URl = 'https://api.themoviedb.org'
+import {homeQuery} from '../../servises/api'
 
 
 const HomePage = () => {
@@ -14,7 +13,7 @@ const HomePage = () => {
       async function homefetch() {
          try {
           
-             const resAxios = await axios.get(`${BASE_URl}/3/trending/movie/week?api_key=0754829cbe2d4a3d2043b315bf2671de&language=ru-US&page=${page}`)
+            const resAxios = await homeQuery(page)
        const result = resAxios.data.results
        setSearchQuery(prev => [...prev, ...result])
          } catch (error) {

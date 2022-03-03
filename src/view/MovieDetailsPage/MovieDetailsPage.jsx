@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Button } from './MovieDetailsPage.styles'
 import { toast } from 'react-toastify';
 import MoviePageList from '../../component/MovieDetailsPageList'
+import {movieDetailsQuery} from '../../servises/api'
 
 const MovieDetailsPage = () => {
    const { slug } = useParams()
@@ -21,8 +22,7 @@ const MovieDetailsPage = () => {
    
    useEffect(() => {
       
-     
-      fetch(`https://api.themoviedb.org/3/movie/${matchId}?api_key=0754829cbe2d4a3d2043b315bf2671de&language=en-US`)
+     movieDetailsQuery(matchId)
          .then(response => response.json())
          .then(data => {
             if (!data) {

@@ -4,9 +4,9 @@ import {Button} from './MoviesPage.styles'
 import { toast } from 'react-toastify';
 import { useEffect, useState } from "react";
 import { useSearchParams } from 'react-router-dom';
+import {movieQuery} from "servises/api";
 
 
-const API_KEY = '0754829cbe2d4a3d2043b315bf2671de'
 const MoviesPage = () => {
   //  const [searchQuery, setSearchQuery] = useState('');
    const [page, setPage] = useState(1);
@@ -27,9 +27,8 @@ const MoviesPage = () => {
 //     }
       if (!paramsQuery) {
       return;
-    }
-
-      fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${paramsQuery}&page=${page}&include_adult=false`)
+     }
+        movieQuery(paramsQuery, page)
          .then(response => response.json())
          .then(({ results }) => {
               if (results.length === 0) {
@@ -48,7 +47,6 @@ setPage(prev => prev + 1)
 
     const handelFormSubmit = searchQuery => {
     // setSearchQuery(searchQuery);
-   //  setStatus('pending');
      setMovie([]);
       setPage(1);
       setSearchParams({ query: searchQuery })
