@@ -28,15 +28,18 @@ const MoviesPage = () => {
       if (!paramsQuery) {
       return;
      }
-        movieQuery(paramsQuery, page)
+      movieQuery(paramsQuery, page)
+         
+      // .then(data.data.results)
          .then(response => response.json())
-         .then(({ results }) => {
+           .then(({ results }) => {
+ 
               if (results.length === 0) {
         toast.error('ERROR', {
           theme: 'colored',
         });
-      }
-            
+                 
+              }
           return setMovie(prev => [...prev, ...results])
          })
    }, [paramsQuery, page])
